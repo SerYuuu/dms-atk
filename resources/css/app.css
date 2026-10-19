@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+
+    /* Custom thin scrollbar */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+    }
+}
+
+@layer components {
+    .field-label {
+        @apply mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-600;
+    }
+
+    .field-input {
+        @apply block w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-800 shadow-sm
+               placeholder:text-slate-400 transition-all duration-150
+               focus:border-brand-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand-500/10;
+    }
+
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-600 to-brand-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-brand-700/20
+               transition-all duration-150 hover:from-brand-500 hover:to-brand-600 hover:shadow-md hover:shadow-brand-600/25
+               active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2;
+    }
+
+    .btn-secondary {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200/90 bg-white px-4 py-2.5 text-sm font-semibold
+               text-slate-700 shadow-sm transition-all duration-150 hover:border-slate-300 hover:bg-slate-50/80 hover:text-slate-900
+               active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2;
+    }
+
+    .btn-danger {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl border border-red-200 bg-red-50/60 px-3.5 py-2 text-sm font-semibold
+               text-red-700 transition-all duration-150 hover:bg-red-100/80 hover:border-red-300
+               active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2;
+    }
+
+    .card-base {
+        @apply rounded-2xl border border-slate-200/80 bg-white shadow-card transition-all duration-200;
+    }
+
+    .stat-card {
+        @apply relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-5 shadow-card transition-all duration-200
+               hover:-translate-y-0.5 hover:shadow-soft;
+    }
+
+    .badge-pill {
+        @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold tracking-wide;
+    }
+
+    .badge-emerald {
+        @apply badge-pill bg-brand-50 text-brand-700 border border-brand-200/60;
+    }
+
+    .badge-amber {
+        @apply badge-pill bg-amber-50 text-amber-700 border border-amber-200/70;
+    }
+
+    .badge-slate {
+        @apply badge-pill bg-slate-100 text-slate-700 border border-slate-200/80;
+    }
+
+    .badge-rose {
+        @apply badge-pill bg-rose-50 text-rose-700 border border-rose-200/70;
+    }
+}
